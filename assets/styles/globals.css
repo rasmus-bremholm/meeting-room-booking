@@ -41,6 +41,12 @@ footer {
 	width: 100%;
 }
 
+footer {
+	position: fixed;
+	bottom: 0;
+	overflow: hidden;
+}
+
 header {
 	display: flex;
 	flex-direction: column;

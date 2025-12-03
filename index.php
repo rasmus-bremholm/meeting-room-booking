@@ -6,7 +6,7 @@ require_once __DIR__ . '/includes/header.php';
 
    <main class="app">
       <div class="login-container">
-         <form method="post">
+         <form method="post" id="login-form">
             <label for="username">Användarnamn: </label>
             <input type="text" id="username" name="username">
             <label for="password">Lösenord: </label>
