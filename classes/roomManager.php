@@ -38,14 +38,18 @@ class RoomManager {
       ];
       $this->store->write($rooms);
    }
-   public function updateRoom(int $id, $data):?array{
+   public function updateRoom(int $id, array $data){
 
       // Kan inte hitta rummet direkt med findById, det skapar en kopia. filtrera istället.
       $rooms = $this->all();
 
       foreach($rooms as $index => $r){
          if($r['id'] === $id){
-            //uppdatera nu!
+            $rooms[$index]['name'] = $data['name'] ?? $r['name'];
+            $rooms[$index]['seats'] = $data['seats'] ?? $r['seats'];
+            $rooms[$index]['hasTv'] = $data['hasTv'] ?? $r['hasTv'];
+            $rooms[$index]['hasSound'] = $data['hasSound'] ?? $r['hasSound'];
+            break;
          }
       }
 
@@ -53,7 +57,18 @@ class RoomManager {
 
 
    }
-   public function deleteRoom(int $id):?array{
+   public function deleteRoom(int $id){
+
+      $rooms = $this->all();
+      // samma sak som update, unset() tar bort??
+      foreach($rooms as $index => $r){
+         if($r['id'] === $id){
+            unset($r);
+            break;
+         }
+      }
+
+      $this->store->write($rooms);
 
    }
 }
