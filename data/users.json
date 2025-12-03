@@ -2,6 +2,6 @@
 	{
 		"id": 1,
 		"username": "Rasmus",
-		"password": "abc123"
+		"passwordHash": "$2y$12$qjr4TuyoBWaBdHoP1zIY3eAtklR5IU/bozyj28.tB8v5DhpqfyF9q" 
 	}
 ]
