@@ -1,18 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+	--color-bg: #3c4044;
+	--color-bg-surface: #4f5357;
+	--color-text: #dddcdb;
+	--color-accent: #fd7b41;
+	--color-accent-hover: #edbf9b;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	&:hover {
+		color: var(--color-accent-hover);
+	}
+}
+
 body {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
+	height: 100svh;
+	max-width: 1080px;
+	margin: 0 auto;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	font-family: "Open Sans", sans-serif;
 }
 
 main,
 header,
 footer {
-	max-width: 1080px;
-	margin: 0 auto;
+	width: 100%;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	h1 {
+		display: inline-flex;
+		justify-content: center;
+		text-transform: uppercase;
+	}
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 150px;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	background-color: var(--color-bg-surface);
+	height: 100%;
+	padding: 2rem;
+}
+
+nav {
+	margin: 2rem 0;
+	display: flex;
+	gap: 3rem;
+	border-bottom: 2px solid var(--color-bg);
 }
