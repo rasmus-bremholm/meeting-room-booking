@@ -39,8 +39,19 @@ class RoomManager {
       $this->store->write($rooms);
    }
    public function updateRoom(int $id, $data):?array{
-      $room = $this->findRoomById($id);
-      
+
+      // Kan inte hitta rummet direkt med findById, det skapar en kopia. filtrera istället.
+      $rooms = $this->all();
+
+      foreach($rooms as $index => $r){
+         if($r['id'] === $id){
+            //uppdatera nu!
+         }
+      }
+
+      $this->store->write($rooms);
+
+
    }
    public function deleteRoom(int $id):?array{
 
