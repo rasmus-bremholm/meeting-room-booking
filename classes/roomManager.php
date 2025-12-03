@@ -67,7 +67,7 @@ class RoomManager {
             break;
          }
       }
-
+      $rooms = array_values($rooms); // reindexar arrayen? bra?
       $this->store->write($rooms);
 
    }
