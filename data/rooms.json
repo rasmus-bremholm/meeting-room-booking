@@ -1,0 +1,44 @@
+[
+	{
+		"id": 1,
+		"name": "Mint",
+		"seats": 6,
+		"hasTv": false,
+		"hasSound": true
+	},
+	{
+		"id": 2,
+		"name": "Ubuntu",
+		"seats": 20,
+		"hasTv": true,
+		"hasSound": true
+	},
+	{
+		"id": 3,
+		"name": "Arch",
+		"seats": 1,
+		"hasTv": false,
+		"hasSound": false
+	},
+	{
+		"id": 4,
+		"name": "Kali",
+		"seats": 5,
+		"hasTv": true,
+		"hasSound": false
+	},
+	{
+		"id": 5,
+		"name": "Debian",
+		"seats": 9,
+		"hasTv": true,
+		"hasSound": true
+	},
+	{
+		"id": 6,
+		"name": "Fedora",
+		"seats": 12,
+		"hasTv": false,
+		"hasSound": true
+	}
+]
