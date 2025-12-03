@@ -63,7 +63,7 @@ class RoomManager {
       // samma sak som update, unset() tar bort??
       foreach($rooms as $index => $r){
          if($r['id'] === $id){
-            unset($r);
+            unset($rooms[$index]);
             break;
          }
       }
