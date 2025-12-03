@@ -2,6 +2,16 @@
 $pageTitle = "Startsida";
 $pageHeading = "Startsida";
 require_once __DIR__ . '/includes/header.php';
+$userManager = new UserManager(__DIR__.'/data/users.json');
+
+
+$error = '';
+
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+   $username = trim($_POST['username'] ?? "");
+   $password = $_POST['password'] ?? "";
+   $user = $um->findUserByUsername($username);
+}
 ?>
 
    <main class="app">
