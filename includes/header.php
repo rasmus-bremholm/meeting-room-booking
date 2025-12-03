@@ -12,7 +12,7 @@
    <header>
       <h1>Boka Mötesrum</h1>
          <nav class="navbar">
-            <a href="index.php">Startsida</a>
+            <a href="dashboard.php">Startsida</a>
             <a href="rooms.php">Mötesrum</a>
             <a href="users.php">Personer</a>
          </nav>
