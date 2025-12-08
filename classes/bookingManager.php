@@ -28,8 +28,8 @@ class BookingManager {
          if($b['userId'] === $userId){
             $userBookings[] = $b;
          }
-         return $userBookings;
       }
+      return $userBookings;
    }
 
 
