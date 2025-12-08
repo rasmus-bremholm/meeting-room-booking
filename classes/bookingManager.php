@@ -19,9 +19,17 @@ class BookingManager {
       return null;
    }
 
-   public function findBookingByUserId(int $userId): ?array{
+   public function findBookingByUserId(int $userId): array{
 
-      return [];
+      $bookings  = $this->all();
+      $userBookings = [];
+
+      foreach($bookings as $b){
+         if($b['userId'] === $userId){
+            $userBookings[] = $b;
+         }
+         return $userBookings;
+      }
    }
 
 
@@ -58,4 +66,5 @@ class BookingManager {
       $bookings = array_values($bookings);
       $this->store->write($bookings);
    }
+
 }

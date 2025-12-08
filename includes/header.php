@@ -22,9 +22,11 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="dashboard.php">Startsida</a>
             <a href="rooms.php">Mötesrum</a>
             <a href="users.php">Personer</a>
+            <?php if(isset($_SESSION['user'])):  ?>
             <div class="user-info">
                Välkommen <?= htmlspecialchars($_SESSION['user']['name']) ?>
             </div>
-
+            <a href="logout.php">Logout</a>
+            <?php endif; ?>
          </nav>
    </header>
