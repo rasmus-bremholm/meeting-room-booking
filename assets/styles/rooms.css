@@ -1,0 +1,16 @@
+.grid-container {
+	display: grid;
+	margin-top: 1rem;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.room-info {
+	display: flex;
+	margin-bottom: 0.5rem;
+	gap: 1rem;
+	font-size: 0.8rem;
+	span {
+		font-size: 1rem;
+	}
+}

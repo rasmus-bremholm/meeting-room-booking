@@ -25,7 +25,7 @@
                         <h3><?= $room['name'] ?></h3> <p class="date"><?= $booking['date'] ?></p>
                         <p>Room #<?= $booking['roomId'] ?></p>
                      </div>
-                     <hr/>
+                     <hr>
                      <div class="booking-info">
                         <div>
                             <span class="material-symbols-outlined">person</span> <?= $room['seats'] ?> seats
