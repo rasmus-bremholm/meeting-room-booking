@@ -32,6 +32,12 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
    <main class="app">
       <div class="login-container">
          <h2 style="text-align:center;">LOGGA IN</h2>
+            <?php if (isset($_GET['logout'])): ?>
+               <div class="info-message">Du är utloggad, logga in igen</div>
+            <?php endif; ?>
+            <?php if (isset($_GET['unauthorized'])): ?>
+               <div class="error-message">Du har inte behörighet till sidan</div>
+            <?php endif; ?>
          <form method="post" id="login-form">
             <label for="username">Användarnamn: </label>
             <input type="text" id="username" name="username">
