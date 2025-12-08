@@ -1,17 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
-	--color-bg: #3c4044;
-	--color-bg-surface: #4f5357;
-	--color-text: #dddcdb;
-	--color-accent: #fd7b41;
-	--color-accent-hover: #edbf9b;
+	--color-bg: #0a0a0a;
+	--color-bg-surface: #1a1a1a;
+	--color-bg-muted: #262626;
+
+	--color-text: #fafafa;
+	--color-text-muted: #a3a3a3;
+
+	--color-accent: #3b82f6;
+	--color-accent-hover: #2563eb;
+
+	--color-border: #404040;
 }
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	transition: all 0.2s ease;
 }
 
 a {
@@ -67,9 +74,26 @@ header {
 	padding: 2rem;
 }
 
+.user-info {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+	gap: 1rem;
+}
+
+/*
+MUI Icons
+*/
+
+.material-symbols-outlined {
+	font-size: 24px;
+	vertical-align: middle;
+}
+
 nav {
 	margin: 2rem 0;
 	display: flex;
+	align-items: center;
 	gap: 3rem;
 	border-bottom: 2px solid var(--color-bg);
 }

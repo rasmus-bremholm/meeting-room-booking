@@ -10,8 +10,10 @@ if (session_status() === PHP_SESSION_NONE) {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Rasmus Meeting Booking</title>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
    <link rel="stylesheet" href="../assets/styles/globals.css">
    <link rel="stylesheet" href="../assets/styles/forms.css">
+   <link rel="stylesheet" href="buttons.css">
 </head>
 <body>
    <div class="container">
@@ -24,9 +26,9 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="users.php">Personer</a>
             <?php if(isset($_SESSION['user'])):  ?>
             <div class="user-info">
-               Välkommen <?= htmlspecialchars($_SESSION['user']['name']) ?>
+               Välkommen <?= htmlspecialchars($_SESSION['user']['name']) ?> <span class="material-symbols-outlined">person</span>
             </div>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php"><span class="material-symbols-outlined">logout</span></a>
             <?php endif; ?>
          </nav>
    </header>
