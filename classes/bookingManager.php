@@ -32,6 +32,17 @@ class BookingManager {
       return $userBookings;
    }
 
+   public function findByRoomId(int $roomId): array{
+      $bookings = $this->all();
+      $roomBookings = [];
+      foreach($bookings as $b){
+         if($b['roomId'] === $roomId){
+            $roomBookings[] = $b;
+         }
+      };
+      return $roomBookings;
+   }
+
 
    public function addBooking(booking $booking){
       $bookings = $this->all();
