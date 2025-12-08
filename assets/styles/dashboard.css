@@ -63,3 +63,11 @@
 		font-size: 1rem;
 	}
 }
+
+/** Auth stuffs. */
+
+.logout-message,
+.error-message {
+	color: var(--color-error);
+	font-weight: 600;
+}
