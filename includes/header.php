@@ -1,3 +1,9 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +17,14 @@
    <div class="container">
    <header>
       <h1>Boka Mötesrum</h1>
+
          <nav class="navbar">
             <a href="dashboard.php">Startsida</a>
             <a href="rooms.php">Mötesrum</a>
             <a href="users.php">Personer</a>
+            <div class="user-info">
+               Välkommen <?= htmlspecialchars($_SESSION['user']['name']) ?>
+            </div>
+
          </nav>
    </header>
