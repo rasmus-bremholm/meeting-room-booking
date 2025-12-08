@@ -9,7 +9,9 @@
    <main class="app">
       <div class="dashboard-container">
          <div id="my-bookings"></div>
-         <div id="new-booking"></div>
+         <div id="new-booking">
+            <a class="boka-nytt-button" href="rooms.php">Boka Nytt</a>
+         </div>
       </div>
    </main>
 
