@@ -5,6 +5,8 @@
    $pageTitle = "Dashboard";
    $pageHeading = "Dashboard";
    require_once __DIR__ . '/includes/header.php';
+   
+   <link rel="stylesheet" href="/assets/styles/dashboard.css">
 
    $bookingManager = new BookingManager(__DIR__ . '/data/bookings.json');
    $roomManager = new RoomManager(__DIR__ . '/data/rooms.json');
