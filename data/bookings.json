@@ -6,5 +6,13 @@
 		"date": "2025-12-08",
 		"startTime": "09:00",
 		"endTime": "10:00"
+	},
+	{
+		"id": 2,
+		"roomId": 3,
+		"userId": 1,
+		"date": "2025-12-09",
+		"startTime": "09:00",
+		"endTime": "10:00"
 	}
 ]

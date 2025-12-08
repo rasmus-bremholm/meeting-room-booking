@@ -21,15 +21,34 @@
                <?php foreach($userBookings as $booking): ?>
                   <?php $room = $roomManager->findRoomById($booking['roomId']); ?>
                   <div class="booking-item">
-                     <p><?= $room['name'] ?></p>
-                     <p><?= $booking['date'] ?></p>
+                     <div>
+                        <h3><?= $room['name'] ?></h3> <p class="date"><?= $booking['date'] ?></p>
+                        <p>Room #<?= $booking['roomId'] ?></p>
+                     </div>
+                     <hr/>
+                     <div class="booking-info">
+                        <div>
+                            <span class="material-symbols-outlined">person</span> <?= $room['seats'] ?> seats
+                        </div>
+                        <div>
+                           <?php if ($room['hasTv']): ?>
+                              <span class="material-symbols-outlined">tv</span> TV
+                           <?php endif; ?>
+                        </div>
+                        <div>
+                           <?php if ($room['hasSound']): ?>
+                              <span class="material-symbols-outlined">volume_up</span> Audio
+                           <?php endif; ?>
+                        </div>
+
+                     </div>
                      <p><?= $booking['startTime'] ?> - <?= $booking['endTime'] ?></p>
                   </div>
                <?php endforeach; ?>
             <?php endif; ?>
          </div>
          <div id="new-booking">
-            <a class="boka-nytt-button" href="rooms.php">Boka Nytt</a>
+            <a class="boka-nytt-button" href="rooms.php"><span class="material-symbols-outlined">add</span>Boka Nytt</a>
          </div>
       </div>
    </main>
