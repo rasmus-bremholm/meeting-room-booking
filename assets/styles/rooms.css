@@ -14,3 +14,11 @@
 		font-size: 1rem;
 	}
 }
+.buttons-container {
+	width: 100%;
+	display: flex;
+	gap: 0.5rem;
+	justify-content: stretch;
+	flex-direction: row;
+	align-items: center;
+}

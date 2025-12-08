@@ -12,6 +12,9 @@
 	--color-accent-hover: #2563eb;
 
 	--color-border: #404040;
+
+	--color-error: #f55757;
+	--color-error-hover: #fa6969;
 }
 
 * {

@@ -10,10 +10,18 @@
    $roomManager = new RoomManager(__DIR__ . '/data/rooms.json');
 
    $rooms = $roomManager->all();
+
+
+   if($_SERVER['REQUEST_METHOD'] === 'POST'){
+      $action = $_POST['action'] ?? '';
+      $roomId = (int)$_POST['roomId'];
+   }
    ?>
+
 
 <link rel="stylesheet" href="/assets/styles/dashboard.css">
 <link rel="stylesheet" href="/assets/styles/rooms.css">
+<link rel="stylesheet" href="/assets/styles/buttons.css">
 <main class="app">
    <h2>Boka Mötesrum</h2>
    <div class="grid-container">
@@ -33,6 +41,12 @@
                   <?php endif; ?>
                </div>
             </div>
+            <form class="buttons-container">
+               <input type="hidden" name="roomId" value="<?=$room['id'] ?>">
+               <button class="btn-main"><span class="material-symbols-outlined">event_available</span>Boka</button>
+               <button class="btn-outlined"><span class="material-symbols-outlined">edit</span>Redigera</button>
+               <button class="btn-error"><span class="material-symbols-outlined">delete</span>Delete</button>
+            </form>
          </div>
       <?php endforeach; ?>
    </div>
