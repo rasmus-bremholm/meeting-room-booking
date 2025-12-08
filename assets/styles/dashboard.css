@@ -16,10 +16,10 @@
 
 #new-booking {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: stretch;
-	min-height: 200px;
-	max-height: 200px;
+	align-items: center;
+	height: 200px;
 	flex: 1;
 	a {
 		display: flex;
