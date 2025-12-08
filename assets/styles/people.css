@@ -1,0 +1,29 @@
+.person {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	border: 1px solid var(--color-border);
+	padding: 1rem;
+	margin-top: 1rem;
+	border-radius: 8px;
+	&:hover {
+		border: 1px solid var(--color-text-muted);
+	}
+	form {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-left: auto;
+		button {
+			margin-top: 0;
+		}
+	}
+}
+
+#add-new {
+	cursor: pointer;
+	background-color: var(--color-accent);
+	justify-content: center;
+	text-transform: uppercase;
+	font-weight: 600;
+}

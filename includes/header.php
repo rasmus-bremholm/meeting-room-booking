@@ -23,7 +23,7 @@ if (session_status() === PHP_SESSION_NONE) {
          <nav class="navbar">
             <a href="dashboard.php">Startsida</a>
             <a href="rooms.php">Mötesrum</a>
-            <a href="users.php">Personer</a>
+            <a href="people.php">Personer</a>
             <?php if(isset($_SESSION['user'])):  ?>
             <div class="user-info">
                Välkommen <?= htmlspecialchars($_SESSION['user']['name']) ?> <span class="material-symbols-outlined">person</span>
