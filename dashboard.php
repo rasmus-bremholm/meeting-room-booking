@@ -5,14 +5,12 @@
    $pageTitle = "Dashboard";
    $pageHeading = "Dashboard";
    require_once __DIR__ . '/includes/header.php';
-   
-   <link rel="stylesheet" href="/assets/styles/dashboard.css">
 
    $bookingManager = new BookingManager(__DIR__ . '/data/bookings.json');
    $roomManager = new RoomManager(__DIR__ . '/data/rooms.json');
    $userBookings = $bookingManager->findBookingByUserId($_SESSION['user']['id']);
    ?>
-
+   <link rel="stylesheet" href="/assets/styles/dashboard.css">
    <main class="app">
       <div class="dashboard-container">
          <div id="my-bookings">
