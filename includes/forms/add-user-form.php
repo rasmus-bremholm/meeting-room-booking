@@ -4,11 +4,11 @@
       <input type="hidden" name="action" value="add">
 
       <label for="name">Namn: </label>
-      <input type="text" name="name" id="name">
+      <input type="text" name="name" id="name" required>
       <label for="username">Användarnamn: </label>
-      <input type="text" name="username" id="username">
+      <input type="text" name="username" id="username" required>
       <label for="password">Lösenord: </label>
-      <input type="text" name="password" id="password">
+      <input type="password" name="password" id="password" required>
 
       <button type="submit" class="btn-main">Spara</button>
       <a href="people.php" class="btn-error">Avbryt</a>
