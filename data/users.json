@@ -4,5 +4,11 @@
         "name": "Rasmus Bremholm",
         "username": "Rasmus",
         "passwordHash": "$2y$12$qjr4TuyoBWaBdHoP1zIY3eAtklR5IU/bozyj28.tB8v5DhpqfyF9q"
+    },
+    {
+        "id": 2,
+        "name": "Henrik Staberg",
+        "username": "henke",
+        "passwordHash": "$2y$12$R9P9BbxDMvBjkF6lr77l.eM46DeYOFfStYMzY01ZwSdfbuZMeucKe"
     }
 ]

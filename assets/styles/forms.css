@@ -15,3 +15,23 @@ button {
 	margin-top: 2rem;
 	text-transform: uppercase;
 }
+
+.user-form {
+	margin: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	.button-group {
+		display: flex;
+		flex-direction: row;
+		justify-content: stretch;
+		align-items: center;
+		gap: 1rem;
+		a {
+			margin: 0;
+		}
+		button {
+			margin: 0;
+		}
+	}
+}
