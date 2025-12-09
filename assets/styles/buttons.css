@@ -1,4 +1,7 @@
-button {
+button,
+a.btn-main,
+a.btn-outlined,
+a.btn-error {
 	cursor: pointer;
 	flex: 1;
 	border: none;
@@ -11,11 +14,15 @@ button {
 	padding: 0.7rem;
 }
 
-button span {
+button span,
+a span {
 	font-size: 8px;
 }
 
-button:hover {
+button:hover,
+a.btn-main:hover,
+a.btn.outlined:hover,
+a.btn-error:hover {
 	transform: translateY(-1px);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
