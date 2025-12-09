@@ -1,67 +1,73 @@
-button,
-a.btn-main,
-a.btn-outlined,
-a.btn-error {
+/* Base styles for ALL buttons/links that act as buttons */
+.btn-main,
+.btn-outlined,
+.btn-error {
 	cursor: pointer;
-	flex: 1;
 	border: none;
 	border-radius: 6px;
 	font-weight: 600;
-	display: flex;
+	display: inline-flex; /* Changed from flex to inline-flex */
 	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
-	padding: 0.7rem;
+	padding: 0.7rem 1.5rem;
+	text-decoration: none; /* For links */
+	transition: all 0.2s ease;
 }
 
-button span,
-a span {
-	font-size: 8px;
+.btn-main span,
+.btn-outlined span,
+.btn-error span {
+	font-size: 12px;
 }
 
-button:hover,
-a.btn-main:hover,
-a.btn.outlined:hover,
-a.btn-error:hover {
+.btn-main:hover,
+.btn-outlined:hover,
+.btn-error:hover {
 	transform: translateY(-1px);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-button:active {
+.btn-main:active,
+.btn-outlined:active,
+.btn-error:active {
 	transform: translateY(0);
 }
 
+/* Specific button styles */
 .btn-main {
 	color: var(--color-text);
 	background-color: var(--color-accent);
-	span {
-		font-size: 12px;
-	}
-	&:hover {
-		background-color: var(--color-accent-hover);
-	}
+}
+
+.btn-main:hover {
+	background-color: var(--color-accent-hover);
 }
 
 .btn-outlined {
 	background-color: transparent;
 	color: var(--color-text);
 	border: 1px solid var(--color-border);
-	span {
-		font-size: 12px;
-	}
-	&:hover {
-		border: 1px solid var(--color-text);
-	}
 }
+
+.btn-outlined:hover {
+	border: 1px solid var(--color-text);
+}
+
 .btn-error {
 	background-color: transparent;
 	color: var(--color-error);
 	border: 1px solid var(--color-error);
-	span {
-		font-size: 12px;
-	}
-	&:hover {
-		color: var(--color-error-hover);
-		border: 1px solid var(--color-error-hover);
-	}
+}
+
+.btn-error:hover {
+	color: var(--color-error-hover);
+	border: 1px solid var(--color-error-hover);
+}
+
+/* For buttons inside button containers that need to grow */
+.buttons-container .btn-main,
+.buttons-container .btn-outlined,
+.buttons-container .btn-error {
+	flex: 1;
 }
