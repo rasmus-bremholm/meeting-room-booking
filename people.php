@@ -20,6 +20,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       header('Location: people.php');
       exit;
    }
+   if($action === 'edit') {
+      header('Location: people.php?action=edit');
+      exit;
+   }
 }
 
 $users = $userManager->all();
