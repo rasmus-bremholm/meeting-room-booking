@@ -21,5 +21,5 @@ if(!$room){
 
 $roomBookings = $bookingManager->findByRoomId($roomId);
 
-$showBookingForm = isset($_GET[action]) && $_GET['action'] === "book";
+$showBookingForm = isset($_GET['action']) && $_GET['action'] === "book";
 ?>
