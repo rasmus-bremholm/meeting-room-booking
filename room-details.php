@@ -60,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <link rel="stylesheet" href="/assets/styles/room-details.css">
-<main class="app">
+<main class="app" id="room-details-wrapper">
    <h2><?= $room['name']?></h2>
    <section class="room-info-section">
       <h3>Infomation:</h3>
@@ -78,9 +78,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
          <p>Inga Bokningar!</p>
       <?php else: ?>
          <?php foreach ($roomBookings as $booking): ?>
-            
+            <?php $bookedUser = $userManager->findUserById($booking['userId']); ?>
+            <div class="booking-container">
+               <p>Datum: <?= $booking['date'] ?></p>
+               <p>Tid: <?= $booking['startTime'] ?> - <?= $booking['endTime'] ?></p>
+               <p>Bokad av: <?= $bookedUser['name'] ?? "Anonym" ?></p>
+            </div>
+            <hr>
          <?php endforeach; ?>
+         <?php endif; ?>
    </section>
+   <hr>
    <section>
       <?php if($showBookingForm):?>
          <div class="form-controller">
