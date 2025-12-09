@@ -25,6 +25,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       header('Location: people.php?action=edit&id='.$userId);
       exit;
    }
+   if($action === 'update'){
+      $userId = (int)$_POST['userId'];
+      $data = [
+         'name' => $_POST['name'],
+         'username' => $_POST['username'],
+         'password' => $_POST['password'] ?? ''
+      ];
+      $userManager->updateUser($userId, $data);
+      header('Location: people.php');
+      exit;
+   }
 }
 
 $users = $userManager->all();

@@ -19,6 +19,8 @@
       <input type="text" name="name" id="name" value="<?= $userToEdit['name'] ?>">
       <label for="username">Användarnamn: </label>
       <input type="text" name="username" id="username" value="<?= $userToEdit['username'] ?>">
+      <label for="password">Lösenord: </label>
+      <input type="text" name="password" id="password" value="<?= $userToEdit['password'] ?>">
 
       <button type="submit" class="btn-main">Spara</button>
       <a href="people.php" class="btn-error">Avbryt</a>
