@@ -55,7 +55,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    }
 
    if($action === 'cancelBooking'){
-      // do Other thing ?
+     $bookingId = (int)$_POST['bookingId'];
+     $bookingManager->deleteBooking($bookingId);
+     header('Location: room-detail.php?id=' . $roomId);
+     exit;
    }
 }
 ?>
@@ -93,7 +96,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       <?php if($showBookingForm):?>
          <div class="form-controller">
             <h3>Boka <?= $room['name'] ?></h3>
-            <form method="POST">
+            <form method="POST" class="form-controller">
                <input type="hidden" name="action" value="bookRoom">
                <input type="hidden" name="roomId" value="<?= $room['id'] ?>">
 
