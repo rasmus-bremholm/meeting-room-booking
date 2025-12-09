@@ -34,7 +34,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    $action = $_POST['action'] ?? '';
 
    if($action === 'bookRoom'){
-      // Do something :S:S:
+      $date = $_POST['date'];
+      $timeSlot = $_POST['timeSlot'];
+
+      // Hitta detta på nätet...
+      list($startTime, $endTime) = explode('-', $timeSlot);
+
+      $booking = new Booking(
+         id: 0,
+         roomId: $roomId,
+         userId: $_SESSION['user']['id'],
+         date: $date,
+         startTime: $startTime,
+         endTime: $endTime
+      );
+
+      $bookingManager->addBooking($booking);
+      header('Location: dashboard.php');
+      exit;
    }
 
    if($action === 'cancelBooking'){
@@ -55,6 +72,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
          <p>Ljudsystem: Ja</p>
       <?php endif; ?>
    </section>
+   <section class="bookings-list">
+      <h3>Befintliga Bokningar</h3>
+      <?php if(empty($roomBookings)): ?>
+         <p>Inga Bokningar!</p>
+      <?php else: ?>
+         <?php foreach ($roomBookings as $booking): ?>
+            
+         <?php endforeach; ?>
+   </section>
    <section>
       <?php if($showBookingForm):?>
          <div class="form-controller">
@@ -72,6 +98,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                      <option value="<?= $slot ?>"><?= $slot ?></option>
                   <?php endforeach; ?>
                </select>
+               <button type="submit" class="btn-main">Boka Rum</button>
+               <a href="room-detail.php?id=<?= $room['id']?>" class="btn-error">Avbryt</a>
             </form>
          </div>
       <?php endif; ?>
