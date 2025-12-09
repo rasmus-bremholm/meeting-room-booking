@@ -9,6 +9,20 @@
    $bookingManager = new BookingManager(__DIR__ . '/data/bookings.json');
    $roomManager = new RoomManager(__DIR__ . '/data/rooms.json');
    $userBookings = $bookingManager->findBookingByUserId($_SESSION['user']['id']);
+
+
+  if($_SERVER['REQUEST_METHOD'] === 'POST') {
+   $action = $_POST['action'] ?? '';
+
+   if($action === 'cancelBooking'){
+      $bookingId = (int)$_POST['bookingId'];
+      $bookingManager->deleteBooking($bookingId);
+      header('Location: dashboard.php');
+      exit;
+   }
+}
+
+
    ?>
    <link rel="stylesheet" href="/assets/styles/dashboard.css">
    <main class="app">
@@ -43,6 +57,13 @@
 
                      </div>
                      <p><?= $booking['startTime'] ?> - <?= $booking['endTime'] ?></p>
+                     <form method="POST" style="display: inline">
+                        <input type="hidden" name="action" value="cancelBooking">
+                        <input type="hidden" name="bookingId" value="<?= $booking['id'] ?>">
+                        <button type="submit" class="btn-error">
+                           <span class="material-symbols-outlined">delete</span> Avboka
+                        </button>
+                     </form>
                   </div>
                <?php endforeach; ?>
             <?php endif; ?>
