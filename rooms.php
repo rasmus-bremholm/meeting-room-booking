@@ -11,7 +11,6 @@
 
    $rooms = $roomManager->all();
 
-
    if($_SERVER['REQUEST_METHOD'] === 'POST'){
       $action = $_POST['action'] ?? '';
       $roomId = (int)$_POST['roomId'];
@@ -39,14 +38,19 @@
                   <?php if ($room['hasTv']): ?>
                      <span class="material-symbols-outlined">tv</span> TV
                   <?php endif; ?>
+                  <?php if ($room['hasSound']): ?>
+                     <span class="material-symbols-outlined">volume_up</span> Ljudsystem
+                  <?php endif; ?>
                </div>
             </div>
-            <form class="buttons-container">
-               <input type="hidden" name="roomId" value="<?=$room['id'] ?>">
-               <button class="btn-main"><span class="material-symbols-outlined">event_available</span>Boka</button>
-               <button class="btn-outlined"><span class="material-symbols-outlined">edit</span>Redigera</button>
-               <button class="btn-error"><span class="material-symbols-outlined">delete</span>Delete</button>
-            </form>
+            <div class="buttons-container">
+               <a href="room-details.php?id=<?=$room['id'] ?>&action=book" class="btn-main"><span class="material-symbols-outlined">event_available</span>Boka</a>
+               <form style="display: contents">
+                  <input type="hidden" name="roomId" value="<?=$room['id'] ?>">
+                  <button class="btn-outlined" type="submit" name="action" value="edit"><span class="material-symbols-outlined">edit</span>Redigera</button>
+                  <button class="btn-error" type="submit" name="action" value="delete"><span class="material-symbols-outlined">delete</span>Delete</button>
+               </form>
+            </div>
          </div>
       <?php endforeach; ?>
    </div>
