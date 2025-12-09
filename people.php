@@ -36,6 +36,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       header('Location: people.php');
       exit;
    }
+   if($action === 'add'){
+      $user = new User(
+         id: 0,
+         username: $_POST['username'],
+         name: $_POST['name'],
+         passwordHash: ''
+      );
+      $userManager->addUser($user, $_POST['password']);
+      header('Location: people.php');
+      exit;
+   }
 }
 
 $users = $userManager->all();
