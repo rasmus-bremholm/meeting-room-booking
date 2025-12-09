@@ -21,7 +21,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit;
    }
    if($action === 'edit') {
-      header('Location: people.php?action=edit');
+      $userId = (int)$_POST['userId'];
+      header('Location: people.php?action=edit&id='.$userId);
       exit;
    }
 }
