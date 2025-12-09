@@ -5,10 +5,6 @@ require_once __DIR__ . '/classes/userManager.php';
 $pageTitle = "Personer";
 require_once __DIR__ . '/includes/header.php';
 
-//Form Imports
-
-require_once __DIR__ . '/includes/forms/edit-user-form.php';
-
 $userManager = new UserManager(__DIR__ . '/data/users.json');
 
 $showAddForm = isset($_GET['action']) && $_GET['action'] === 'add';
@@ -34,6 +30,7 @@ $users = $userManager->all();
       <?php if($showAddForm): ?>
          <?php require __DIR__ . '/includes/forms/add-user-form.php'; ?>
       <?php elseif ($showEditForm): ?>
+         <?php require __DIR__ . '/includes/forms/edit-user-form.php'; ?>
       <?php endif; ?>
    <div class="grid-container">
       <?php foreach($users as $user): ?>
