@@ -86,6 +86,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                <p>Datum: <?= $booking['date'] ?></p>
                <p>Tid: <?= $booking['startTime'] ?> - <?= $booking['endTime'] ?></p>
                <p>Bokad av: <?= $bookedUser['name'] ?? "Anonym" ?></p>
+                <form method="POST" style="display: inline">
+                        <input type="hidden" name="action" value="cancelBooking">
+                        <input type="hidden" name="bookingId" value="<?= $booking['id'] ?>">
+                        <button type="submit" class="btn-error">
+                           <span class="material-symbols-outlined">delete</span> Avboka
+                        </button>
+                     </form>
             </div>
             <hr>
          <?php endforeach; ?>
