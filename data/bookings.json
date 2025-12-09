@@ -6,5 +6,29 @@
         "date": "2025-12-09",
         "startTime": "08:00",
         "endTime": "10:00"
+    },
+    {
+        "id": 3,
+        "roomId": 1,
+        "userId": 1,
+        "date": "2025-12-10",
+        "startTime": "15:00",
+        "endTime": "17:00"
+    },
+    {
+        "id": 4,
+        "roomId": 6,
+        "userId": 1,
+        "date": "2025-12-11",
+        "startTime": "13:00",
+        "endTime": "15:00"
+    },
+    {
+        "id": 5,
+        "roomId": 2,
+        "userId": 1,
+        "date": "2025-12-09",
+        "startTime": "10:00",
+        "endTime": "12:00"
     }
 ]
