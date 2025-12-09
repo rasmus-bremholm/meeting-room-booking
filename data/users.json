@@ -10,5 +10,11 @@
         "name": "Henrik Staberg",
         "username": "henke",
         "passwordHash": "$2y$12$R9P9BbxDMvBjkF6lr77l.eM46DeYOFfStYMzY01ZwSdfbuZMeucKe"
+    },
+    {
+        "id": 3,
+        "name": "Björn Bremholm",
+        "username": "berra",
+        "passwordHash": "$2y$12$B/f1UCeqHIKDjrIihFthDOpgbpSRmygCD0ZiC.8LmffV4LvDJc566"
     }
 ]

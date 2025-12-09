@@ -40,7 +40,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       // Hitta detta på nätet...
       list($startTime, $endTime) = explode('-', $timeSlot);
 
-      $booking = new Booking(
+      //Dubbelboking check
+      $isbooked = false;
+      foreach ($roomBookings as $excistingBooking) {
+         if($excistingBooking['date'] === $date &&
+            $excistingBooking['startTime'] === $startTime) {
+         $isbooked = true;
+         break;
+      }
+      }
+
+      if($isbooked){
+         $error = "Tiden är redan bokad!";
+      } else {
+          $booking = new Booking(
          id: 0,
          roomId: $roomId,
          userId: $_SESSION['user']['id'],
@@ -52,6 +65,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       $bookingManager->addBooking($booking);
       header('Location: dashboard.php');
       exit;
+      }
+
+
    }
 
    if($action === 'cancelBooking'){
@@ -86,6 +102,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                <p>Datum: <?= $booking['date'] ?></p>
                <p>Tid: <?= $booking['startTime'] ?> - <?= $booking['endTime'] ?></p>
                <p>Bokad av: <?= $bookedUser['name'] ?? "Anonym" ?></p>
+               <?php if ($booking['userId'] === $_SESSION['user']['id']): ?>
                 <form method="POST" style="display: inline">
                         <input type="hidden" name="action" value="cancelBooking">
                         <input type="hidden" name="bookingId" value="<?= $booking['id'] ?>">
@@ -93,6 +110,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                            <span class="material-symbols-outlined">delete</span> Avboka
                         </button>
                      </form>
+               <?php endif; ?>
             </div>
             <hr>
          <?php endforeach; ?>
@@ -102,6 +120,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    <section>
       <?php if($showBookingForm):?>
          <div class="form-controller">
+            <?php if(isset($error)): ?>
+               <p style="color: red;"><?= $error ?></p>
+            <?php endif; ?>
             <h3>Boka <?= $room['name'] ?></h3>
             <form method="POST" class="form-controller">
                <input type="hidden" name="action" value="bookRoom">
