@@ -5,11 +5,15 @@ require_once __DIR__ . '/classes/userManager.php';
 $pageTitle = "Personer";
 require_once __DIR__ . '/includes/header.php';
 
+//Form Imports
+
+require_once __DIR__ . '/includes/forms/edit-user-form.php';
+
 $userManager = new UserManager(__DIR__ . '/data/users.json');
 
 $showAddForm = isset($_GET['action']) && $_GET['action'] === 'add';
 $showEditForm = isset($_GET['action']) && $_GET['action'] === 'edit';
-$editUderId = isset($_GET['id']) ? $_GET['id'] : null;
+$editUserId = isset($_GET['id']) ? $_GET['id'] : null;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
    $action = $_POST['action'] ?? '';
@@ -27,8 +31,10 @@ $users = $userManager->all();
 <link rel="stylesheet" href="/assets/styles/people.css">
 <main class="app">
    <h2>Personer</h2>
-
-   
+      <?php if($showAddForm): ?>
+         <?php require __DIR__ . '/includes/forms/add-user-form.php'; ?>
+      <?php elseif ($showEditForm): ?>
+      <?php endif; ?>
    <div class="grid-container">
       <?php foreach($users as $user): ?>
          <div class="person">
