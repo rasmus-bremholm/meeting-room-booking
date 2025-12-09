@@ -7,6 +7,10 @@ require_once __DIR__ . '/includes/header.php';
 
 $userManager = new UserManager(__DIR__ . '/data/users.json');
 
+$showAddForm = isset($_GET['action']) && $_GET['action'] === 'add';
+$showEditForm = isset($_GET['action']) && $_GET['action'] === 'edit';
+$editUderId = isset($_GET['id']) ? $_GET['id'] : null;
+
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
    $action = $_POST['action'] ?? '';
 
@@ -23,6 +27,8 @@ $users = $userManager->all();
 <link rel="stylesheet" href="/assets/styles/people.css">
 <main class="app">
    <h2>Personer</h2>
+
+   
    <div class="grid-container">
       <?php foreach($users as $user): ?>
          <div class="person">
@@ -35,6 +41,6 @@ $users = $userManager->all();
             </form>
          </div>
       <?php endforeach; ?>
-      <div class="person" id="add-new"><span class="material-symbols-outlined">add</span>Lägg till ny användare</div>
+      <a class="person" id="add-new" href="people.php?action=add"><span class="material-symbols-outlined">add</span>Lägg till ny användare</a>
    </div>
 </main>

@@ -6,7 +6,9 @@
 	padding: 1rem;
 	margin-top: 1rem;
 	border-radius: 8px;
+	color: var(--color-text);
 	&:hover {
+		color: var(--color-text);
 		border: 1px solid var(--color-text-muted);
 	}
 	form {
