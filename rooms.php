@@ -9,11 +9,34 @@
    $bookingManager = new BookingManager(__DIR__ . '/data/bookings.json');
    $roomManager = new RoomManager(__DIR__ . '/data/rooms.json');
 
+   $showAddForm = isset($_GET['action']) && $_GET['action'] === "add";
+   $showEditForm = isset($_GET['action']) && $_GET['action'] === 'edit;';
+   $editRoomId = isset($_GET['id']) ? $_GET['id'] : null;
+
+
    $rooms = $roomManager->all();
 
    if($_SERVER['REQUEST_METHOD'] === 'POST'){
       $action = $_POST['action'] ?? '';
-      $roomId = (int)$_POST['roomId'];
+      $roomId = (int)$_POST['roomId'] ?? 0;
+
+      if($action === 'delete'){
+         $roomManager->deleteRoom($roomId);
+         header('Location: rooms.php');
+         exit;
+      }
+
+      if($action === 'edit'){
+         header('Location: rooms.php?action=edit&id='. $roomId);
+         exit;
+      }
+
+      if($action === 'update'){
+         // Handle update
+      }
+      if($action === 'add'){
+         // Handle add
+      }
    }
    ?>
 
@@ -52,7 +75,15 @@
                </form>
             </div>
          </div>
-      <?php endforeach; ?>
+         <?php endforeach; ?>
+         <div class="add-room-container">
+            <a href="rooms.php?action=add" class="btn-main"><span class="material-symbols-outlined">add</span>Nytt Rum</a>
+         </div>
+      <?php if($showAddForm): ?>
+         <?php require __DIR__ . '/includes/forms/add-room-form.php'; ?>
+      <?php elseif($showEditForm): ?>
+         <?php require __DIR__ . '/includes/forms/edit-room-form.php'; ?>
+      <?php endif; ?>
    </div>
 </main>
 
