@@ -37,8 +37,8 @@
          $data = [
             'name' => $_POST['name'],
             'steats' => $_POST['seats'],
-            'hasTv' => $_POST['hasTv'],
-            'hasSound' => $_POST['hasSound'],
+            'hasTv' => isset($_POST['hasTv']),
+            'hasSound' => isset($_POST['hasSound'])
          ];
          $roomManager->updateRoom($roomId, $data);
          header('Location: rooms.php');
