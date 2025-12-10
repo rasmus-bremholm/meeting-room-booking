@@ -32,10 +32,20 @@
       }
 
       if($action === 'update'){
-         // Handle update
+         // Samma som update User
+         $roomId = (int)$_POST['roomId'];
+         $data = [
+            'name' => $_POST['name'],
+            'steats' => $_POST['seats'],
+            'hasTv' => $_POST['hasTv'],
+            'hasSound' => $_POST['hasSound'],
+         ];
+         $roomManager->updateRoom($roomId, $data);
+         header('Location: rooms.php');
+         exit;
       }
       if($action === 'add'){
-         // Handle add
+         // Samma som add user
       }
    }
    ?>
@@ -68,7 +78,7 @@
             </div>
             <div class="buttons-container">
                <a href="room-details.php?id=<?=$room['id'] ?>&action=book" class="btn-main"><span class="material-symbols-outlined">event_available</span>Boka</a>
-               <form style="display: contents">
+               <form style="display: contents" method="POST">
                   <input type="hidden" name="roomId" value="<?=$room['id'] ?>">
                   <button class="btn-outlined" type="submit" name="action" value="edit"><span class="material-symbols-outlined">edit</span>Redigera</button>
                   <button class="btn-error" type="submit" name="action" value="delete"><span class="material-symbols-outlined">delete</span>Delete</button>
