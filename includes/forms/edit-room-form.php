@@ -20,11 +20,11 @@ if(!$roomToEdit){
       <input type="number" name="seats" id="seats" value="<?= $roomToEdit['seats'] ?>" required>
 
       <label>
-         <input type="checkbox" name="hasTv" value="1">TV
+         <input type="checkbox" name="hasTv" value="1" <?= $roomToEdit['hasTv'] ? 'checked' : '' ?>>TV
       </label>
 
       <label>
-         <input type="checkbox" name="hasSound" value="1">Ljudsystem
+         <input type="checkbox" name="hasSound" value="1" <?= $roomToEdit['hasSound'] ? 'checked' : '' ?>>Ljudsystem
       </label>
 
       <div class="button-group">
