@@ -36,7 +36,7 @@
          $roomId = (int)$_POST['roomId'];
          $data = [
             'name' => $_POST['name'],
-            'steats' => $_POST['seats'],
+            'seats' => $_POST['seats'],
             'hasTv' => isset($_POST['hasTv']),
             'hasSound' => isset($_POST['hasSound'])
          ];
