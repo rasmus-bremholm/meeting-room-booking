@@ -44,3 +44,5 @@ $user = $_SESSION['user'];
       isVisable = !isVisable;
    }
 </script>
+
+ <?php require_once __DIR__ . '/includes/footer.php'; ?>
