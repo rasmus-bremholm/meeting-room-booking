@@ -46,6 +46,16 @@
       }
       if($action === 'add'){
          // Samma som add user
+         $room = new Room(
+            id: 0,
+            name: $_POST['name'],
+            seats: (int)$_POST['seats'],
+            hasTv: isset($_POST['hasTv']),
+            hasSound: isset($_POST['hasSound'])
+         );
+         $roomManager->addRoom($room);
+         header('Location: rooms.php');
+         exit;
       }
    }
    ?>
