@@ -1,0 +1,15 @@
+.info-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, 1fr);
+}
+
+.grid-item {
+	display: flex;
+	align-items: center;
+	border-top: 1px solid var(--color-border);
+}
+
+.btn-icon {
+	margin-left: auto;
+}

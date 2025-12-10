@@ -44,7 +44,7 @@
     {
         "id": 7,
         "name": "Manjaro",
-        "seats": "69",
+        "seats": 69,
         "hasTv": true,
         "hasSound": true
     }

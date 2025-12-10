@@ -26,9 +26,11 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="people.php">Personer</a>
             <?php if(isset($_SESSION['user'])):  ?>
             <div class="user-info">
-               Välkommen <?= htmlspecialchars($_SESSION['user']['name']) ?> <span class="material-symbols-outlined">person</span>
+               <?= htmlspecialchars($_SESSION['user']['name']) ?> <span class="material-symbols-outlined">person</span>
+               <a href="settings.php"><span class="material-symbols-outlined settings">settings</span></a>
             </div>
             <a href="logout.php"><span class="material-symbols-outlined">logout</span></a>
             <?php endif; ?>
          </nav>
+         <hr>
    </header>

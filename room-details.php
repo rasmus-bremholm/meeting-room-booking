@@ -79,16 +79,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <link rel="stylesheet" href="/assets/styles/room-details.css">
+<link rel="stylesheet" href="/assets/styles/forms.css">
 <main class="app" id="room-details-wrapper">
    <h2><?= $room['name']?></h2>
    <section class="room-info-section">
       <h3>Infomation:</h3>
       <p><span class="material-symbols-outlined">person</span>Platser: <?=$room['seats'] ?></p>
       <?php if($room['hasTv']): ?>
-         <p><span class="material-symbols-outlined">tv</span>TV: Ja</p>
+         <p><span class="material-symbols-outlined">tv</span>TV: Finns</p>
       <?php endif; ?>
       <?php if($room['hasSound']): ?>
-         <p>Ljudsystem: Ja</p>
+         <p><span class="material-symbols-outlined">volume_up</span>Ljudsystem: Finns</p>
       <?php endif; ?>
    </section>
    <section class="bookings-list">
@@ -119,7 +120,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
    <hr>
    <section>
       <?php if($showBookingForm):?>
-         <div class="form-controller">
+         <div class="form-controller user-form">
             <?php if(isset($error)): ?>
                <p style="color: red;"><?= $error ?></p>
             <?php endif; ?>

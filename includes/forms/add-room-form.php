@@ -1,6 +1,6 @@
 <div class="form-container">
    <h3>Nytt Rum</h3>
-   <form method="POST">
+   <form method="POST" class="user-form">
       <input type="hidden" name="action" value="add">
 
       <label for="name">Rumsnamn:</label>

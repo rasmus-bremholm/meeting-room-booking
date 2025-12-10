@@ -9,7 +9,7 @@ if(!$roomToEdit){
 ?>
 <div class="form-container">
    <h3>Redigera Rum</h3>
-   <form method="POST">
+   <form method="POST" class="user-form">
       <input type="hidden" name="action" value="update">
       <input type="hidden" name="roomId" value="<?= $roomToEdit['id'] ?>">
 

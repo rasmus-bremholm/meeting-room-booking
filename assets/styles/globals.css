@@ -85,7 +85,6 @@ hr {
 .user-info {
 	display: flex;
 	align-items: center;
-	margin-bottom: 16px;
 	gap: 1rem;
 }
 
@@ -96,6 +95,14 @@ MUI Icons
 .material-symbols-outlined {
 	font-size: 24px;
 	vertical-align: middle;
+}
+
+.settings {
+	cursor: pointer;
+	color: var(--color-accent);
+	&:hover {
+		color: var(--color-accent-hover);
+	}
 }
 
 nav {
