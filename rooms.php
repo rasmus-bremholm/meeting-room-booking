@@ -10,7 +10,7 @@
    $roomManager = new RoomManager(__DIR__ . '/data/rooms.json');
 
    $showAddForm = isset($_GET['action']) && $_GET['action'] === "add";
-   $showEditForm = isset($_GET['action']) && $_GET['action'] === 'edit;';
+   $showEditForm = isset($_GET['action']) && $_GET['action'] === 'edit';
    $editRoomId = isset($_GET['id']) ? $_GET['id'] : null;
 
 
