@@ -76,15 +76,15 @@
             </div>
          </div>
          <?php endforeach; ?>
-         <div class="add-room-container">
-            <a href="rooms.php?action=add" class="btn-main"><span class="material-symbols-outlined">add</span>Nytt Rum</a>
-         </div>
-      <?php if($showAddForm): ?>
-         <?php require __DIR__ . '/includes/forms/add-room-form.php'; ?>
-      <?php elseif($showEditForm): ?>
-         <?php require __DIR__ . '/includes/forms/edit-room-form.php'; ?>
-      <?php endif; ?>
-   </div>
+      </div>
+      <div class="add-room-container">
+         <a href="rooms.php?action=add" class="btn-main"><span class="material-symbols-outlined">add</span>Nytt Rum</a>
+      </div>
+   <?php if($showAddForm): ?>
+      <?php require __DIR__ . '/includes/forms/add-room-form.php'; ?>
+   <?php elseif($showEditForm): ?>
+      <?php require __DIR__ . '/includes/forms/edit-room-form.php'; ?>
+   <?php endif; ?>
 </main>
 
  <?php require_once __DIR__ . '/includes/footer.php'; ?>
