@@ -47,5 +47,12 @@
         "seats": 69,
         "hasTv": true,
         "hasSound": true
+    },
+    {
+        "id": 8,
+        "name": "Hejsan Henrik",
+        "seats": 1337,
+        "hasTv": true,
+        "hasSound": true
     }
 ]
